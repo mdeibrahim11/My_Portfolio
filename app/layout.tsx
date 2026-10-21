@@ -1,27 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { Josefin_Sans, Space_Grotesk, Inter } from "next/font/google";
+import { Josefin_Sans, Anta } from "next/font/google";
 import "./globals.css";
 
 const josefinSans = Josefin_Sans({
-  variable: "--font-josefin-sans",
+  variable: "--font-josefin",
   subsets: ["latin"],
+  weight: ["300", "400", "600", "700"],
   display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const anta = Anta({
+  variable: "--font-anta",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
+  weight: ["400"],
   display: "swap",
 });
 
 export const viewport: Viewport = {
-  themeColor: "#090B12",
+  themeColor: "#000000",
   colorScheme: "dark",
 };
 
@@ -57,12 +53,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${josefinSans.variable} ${spaceGrotesk.variable} ${inter.variable} dark scroll-smooth`}
+      className={`${josefinSans.variable} ${anta.variable} dark scroll-smooth`}
     >
-      <body className="min-h-screen bg-[#090B12] text-[#F5F5F5] font-sans antialiased selection:bg-[#F53F06]/30 selection:text-[#FF7A00] overflow-x-hidden">
+      <body className="min-h-screen bg-[#000000] text-[#F5F5F5] font-josefin antialiased selection:bg-[#F53F06]/30 selection:text-[#F53F06] overflow-x-hidden">
         {children}
       </body>
     </html>
   );
 }
-

@@ -21,33 +21,36 @@ export function SectionHeading({
 
   return (
     <div className={`mb-12 md:mb-16 ${isCenter ? "text-center mx-auto max-w-3xl" : "max-w-2xl"}`}>
-      {/* Section Indicator Pill */}
+      {/* Numbered Section Label: e.g. # 001 — Home */}
       <div
-        className={`inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.12] text-xs font-mono tracking-widest text-[#FF7A00] mb-4 ${isCenter ? "justify-center" : ""
-          }`}
+        className={`inline-flex items-center gap-2.5 mb-3 text-xs font-anta tracking-widest text-[#71717A] ${
+          isCenter ? "justify-center" : ""
+        }`}
       >
-        <span className="flex h-2 w-2 rounded-full bg-[#F53F06] animate-pulse" />
-        <span className="text-white/60 font-semibold">SECTION {floorNumber}</span>
-        <span className="text-white/20">/</span>
-        <span className="uppercase text-[#FF7A00]">{floorLabel}</span>
+        <span className="text-[#F53F06] font-bold"># {floorNumber}</span>
+        <span className="text-white/20">—</span>
+        <span className="uppercase text-[#A1A1AA] font-anta tracking-widest">{floorLabel}</span>
       </div>
 
-      {/* Main Title */}
+      {/* Main Title (Josefin Sans 700) */}
       <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display tracking-tight text-[#F5F5F5] leading-[1.15]">
         {title}{" "}
         {highlightWord && (
-          <span className="bg-gradient-to-r from-[#F53F06] via-[#FF5722] to-[#FF7A00] bg-clip-text text-transparent">
+          <span className="text-[#F53F06]">
             {highlightWord}
           </span>
         )}
       </h2>
 
-      {/* Subtitle */}
+      {/* Subtitle (Josefin Sans 300) */}
       {subtitle && (
-        <p className="mt-4 text-base sm:text-lg text-[#A1A1AA] leading-relaxed max-w-xl">
+        <p className="mt-4 text-base sm:text-lg text-[#A1A1AA] font-light leading-relaxed max-w-xl">
           {subtitle}
         </p>
       )}
+
+      {/* Thin Divider Line (rgba(245, 245, 245, 0.10)) */}
+      <div className="mt-6 w-full h-[1px] bg-white/10" />
     </div>
   );
 }

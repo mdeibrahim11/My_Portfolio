@@ -1,41 +1,41 @@
 @import "tailwindcss";
 
 :root {
-  --background: #090B12;
-  --elevated: #101523;
-  --elevated-card: #121829;
-  --glass-surface: rgba(255, 255, 255, 0.05);
-  --glass-surface-hover: rgba(255, 255, 255, 0.08);
-  --glass-border: rgba(255, 255, 255, 0.12);
-  --glass-border-hover: rgba(245, 63, 6, 0.45);
-  --primary-accent: #F53F06;
-  --secondary-accent: #FF7A00;
-  --main-text: #F5F5F5;
-  --muted-text: #71717A;
-  --subtle-text: #A1A1AA;
-  --success: #34D399;
+  /* Exact Color Tokens from src/tokens.ts */
+  --color-bg: #000000;
+  --color-fg: #F5F5F5;
+  --color-accent: #F53F06;
+  --color-muted: #71717A;
+  --color-subtle: #A1A1AA;
+  --color-line: rgba(245, 245, 245, 0.10);
+  --color-faint: rgba(245, 245, 245, 0.05);
+
+  /* Animation Easing */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 @theme {
-  --color-bg-base: #090B12;
-  --color-surface-elevated: #101523;
-  --color-surface-card: #121829;
-  --color-glass-surface: rgba(255, 255, 255, 0.05);
-  --color-glass-border: rgba(255, 255, 255, 0.12);
-  --color-accent-flame: #F53F06;
-  --color-accent-amber: #FF7A00;
-  --color-text-main: #F5F5F5;
-  --color-text-muted: #71717A;
-  --color-text-subtle: #A1A1AA;
-  --color-status-success: #34D399;
-  --font-display: var(--font-josefin-sans), var(--font-space-grotesk), sans-serif;
-  --font-sans: var(--font-inter), sans-serif;
+  --color-bg: #000000;
+  --color-fg: #F5F5F5;
+  --color-accent: #F53F06;
+  --color-muted: #71717A;
+  --color-subtle: #A1A1AA;
+  --color-line: rgba(245, 245, 245, 0.10);
+  --color-faint: rgba(245, 245, 245, 0.05);
+
+  --font-josefin: var(--font-josefin), sans-serif;
+  --font-display: var(--font-josefin), sans-serif;
+  --font-body: var(--font-josefin), sans-serif;
+  --font-anta: var(--font-anta), monospace;
+  --font-mono: var(--font-anta), monospace;
 }
 
 body {
-  background-color: var(--background);
-  color: var(--main-text);
-  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-josefin), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 300;
   overflow-x: hidden;
 }
 
@@ -44,65 +44,78 @@ h2,
 h3,
 h4,
 .font-display {
-  font-family: var(--font-josefin-sans), var(--font-space-grotesk), sans-serif;
+  font-family: var(--font-josefin), sans-serif;
+  font-weight: 700;
 }
 
-/* Glassmorphism primitives (Border-radius: 16-24px) */
+p {
+  font-family: var(--font-josefin), sans-serif;
+  font-weight: 300;
+}
+
+.font-anta {
+  font-family: var(--font-anta), monospace;
+  font-weight: 400;
+}
+
+.font-mono {
+  font-family: var(--font-anta), monospace;
+  font-weight: 400;
+}
+
+/* Reference Card Styling (from src/lib/svg.ts) */
+.reference-card {
+  background-color: rgba(245, 245, 245, 0.03);
+  border: 1px solid var(--color-line);
+  border-radius: 16px;
+  transition: border-color 0.25s var(--ease-out), transform 0.25s var(--ease-out);
+}
+
+.reference-card:hover {
+  border-color: rgba(245, 63, 6, 0.45);
+}
+
 .glass-panel {
-  background: rgba(16, 21, 35, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  background-color: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--color-line);
+  border-radius: 16px;
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 20px;
-  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.35);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: rgba(245, 245, 245, 0.03);
+  border: 1px solid var(--color-line);
+  border-radius: 16px;
+  transition: all 0.25s var(--ease-out);
 }
 
 .glass-card:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background-color: rgba(245, 245, 245, 0.05);
   border-color: rgba(245, 63, 6, 0.45);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 32px -4px rgba(245, 63, 6, 0.2);
 }
 
-/* Fallback for browsers without backdrop-filter support */
-@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-  .glass-panel {
-    background: #101523;
-  }
-
-  .glass-card {
-    background: #131a2c;
-  }
+/* Subtle, localized orange-red radial glow */
+.ambient-glow-accent {
+  background: radial-gradient(circle 500px at 50% 50%, rgba(245, 63, 6, 0.08), transparent 70%);
 }
 
-/* Ambient glow accents */
-.ambient-glow-flame {
-  background: radial-gradient(circle 600px at 50% 50%, rgba(245, 63, 6, 0.14), transparent 70%);
+/* Clean section divider line */
+.section-divider {
+  height: 1px;
+  width: 100%;
+  background-color: var(--color-line);
 }
 
-.ambient-glow-amber {
-  background: radial-gradient(circle 600px at 50% 50%, rgba(255, 122, 0, 0.09), transparent 70%);
-}
-
-/* Grid overlay background */
+/* Subtle Grid overlay background on #000000 */
 .bg-cyber-grid {
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    linear-gradient(to right, rgba(245, 245, 245, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(245, 245, 245, 0.02) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 
-/* Hide scrollbars completely while retaining smooth scrolling */
+/* Clean scrolling, no scrollbar clutter */
 html,
 body {
   scrollbar-width: none;
@@ -118,7 +131,6 @@ body {
 
 /* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
-
   *,
   ::before,
   ::after {

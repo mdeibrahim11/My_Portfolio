@@ -25,44 +25,45 @@ export function HeroSection() {
       aria-label="Overview Section"
       className="relative min-h-[92vh] flex flex-col justify-center pt-28 pb-16 sm:pt-36 sm:pb-20 lg:pt-32 lg:pb-20 overflow-hidden"
     >
-      {/* Ambient background glows */}
-      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#F53F06]/[0.08] blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/3 right-1/4 w-[450px] h-[450px] rounded-full bg-[#FF7A00]/[0.06] blur-[120px] pointer-events-none" />
+      {/* Subtle, localized orange-red ambient glow */}
+      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#F53F06]/[0.06] blur-[150px] pointer-events-none" />
 
-      {/* Cyber Grid Background overlay */}
-      <div className="absolute inset-0 bg-cyber-grid opacity-60 pointer-events-none" />
+      {/* Subtle Grid Background overlay */}
+      <div className="absolute inset-0 bg-cyber-grid opacity-40 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Personal Title & CTAs (7 cols) */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             {/* Availability / System Status Pill */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.12] text-xs font-mono text-[#F5F5F5] mb-6 backdrop-blur-md">
-              <span className="flex h-2 w-2 rounded-full bg-[#34D399] animate-pulse" />
-              <span className="text-white/60">SYS:ONLINE</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-xs font-anta text-[#A1A1AA] mb-6 backdrop-blur-md">
+              <span className="flex h-2 w-2 rounded-full bg-[#F53F06] animate-pulse" />
+              <span className="text-[#71717A]">SYS:ONLINE</span>
               <span className="text-white/20">|</span>
-              <span className="text-[#34D399] font-medium">{PERSONAL_INFO.status}</span>
+              <span className="text-[#F5F5F5] font-medium">{PERSONAL_INFO.status}</span>
             </div>
 
-            {/* Greeting & Name */}
-            <p className="text-sm sm:text-base font-mono text-[#FF7A00] tracking-wide mb-2">
-              &lt;developer-profile /&gt;
+            {/* Tagline Indicator */}
+            <p className="text-sm font-anta text-[#71717A] tracking-wider mb-2">
+              # 001 // SYSTEM OVERVIEW
             </p>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold font-display tracking-tight text-[#F5F5F5] leading-[1.1] mb-6">
+
+            {/* Primary Display Heading (Josefin Sans 700) */}
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold font-display tracking-tight text-[#F5F5F5] leading-[1.08] mb-6">
               Hello, I&apos;m{" "}
-              <span className="bg-gradient-to-r from-[#F53F06] via-[#FF5722] to-[#FF7A00] bg-clip-text text-transparent">
+              <span className="text-[#F53F06]">
                 {PERSONAL_INFO.name}
               </span>
             </h1>
 
-            {/* Role / Subheading */}
-            <div className="flex items-center gap-3 text-lg sm:text-2xl font-medium text-white/90 mb-6">
+            {/* Professional Role (Josefin Sans 600) */}
+            <div className="flex items-center gap-3 text-lg sm:text-2xl font-semibold text-[#F5F5F5] mb-6 font-display">
               <span className="text-[#F53F06]">✦</span>
               <p>{PERSONAL_INFO.title}</p>
             </div>
 
-            {/* Concise Compelling Intro */}
-            <p className="text-base sm:text-lg text-[#A1A1AA] max-w-xl leading-relaxed mb-8">
+            {/* Concise Authentic Introduction (Josefin Sans 300) */}
+            <p className="text-base sm:text-lg text-[#A1A1AA] font-light max-w-xl leading-relaxed mb-8">
               {PERSONAL_INFO.shortBio}
             </p>
 
@@ -70,30 +71,32 @@ export function HeroSection() {
             <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto">
               <button
                 onClick={() => scrollTo("projects")}
-                className="group relative inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl font-medium text-sm text-[#090B12] bg-[#F5F5F5] hover:bg-white hover:shadow-xl hover:shadow-[#F53F06]/20 active:scale-95 transition-all duration-200"
+                className="group relative inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-[#000000] bg-[#F5F5F5] hover:bg-[#F53F06] hover:text-white transition-all duration-200 cursor-pointer shadow-lg shadow-black/50"
               >
-                <Code2 className="w-4 h-4 text-[#F53F06]" />
+                <Code2 className="w-4 h-4 text-[#000000] group-hover:text-white transition-colors" />
                 <span>View Projects</span>
               </button>
 
               <button
                 onClick={() => scrollTo("contact")}
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl font-medium text-sm text-[#F5F5F5] bg-white/[0.05] border border-white/[0.12] hover:border-[#F53F06]/50 hover:bg-white/[0.08] active:scale-95 transition-all duration-200 backdrop-blur-md"
+                className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-medium text-sm text-[#F5F5F5] bg-transparent border border-white/15 hover:border-[#F53F06] hover:text-[#F53F06] transition-all duration-200 cursor-pointer"
               >
-                <Send className="w-3.5 h-3.5 text-[#FF7A00]" />
+                <Send className="w-3.5 h-3.5 text-[#F53F06]" />
                 <span>Contact Me</span>
               </button>
             </div>
 
-            {/* Tech chips snippet */}
-            <div className="mt-10 pt-6 border-t border-white/[0.12] flex flex-wrap items-center gap-2 text-xs font-mono text-white/50">
-              <span className="text-[#71717A]">CORE STACK:</span>
-              <span className="px-2.5 py-1 rounded-xl bg-white/[0.05] border border-white/[0.12] text-[#A1A1AA]">Python / Django</span>
-              <span className="px-2.5 py-1 rounded-xl bg-white/[0.05] border border-white/[0.12] text-[#A1A1AA]">FastAPI</span>
-              <span className="px-2.5 py-1 rounded-xl bg-white/[0.05] border border-white/[0.12] text-[#A1A1AA]">PostgreSQL</span>
-              <span className="px-2.5 py-1 rounded-xl bg-white/[0.05] border border-white/[0.12] text-[#A1A1AA]">Docker</span>
-              <span className="px-2.5 py-1 rounded-xl bg-white/[0.05] border border-white/[0.12] text-[#A1A1AA]">Linux</span>
-              <span className="px-2.5 py-1 rounded-xl bg-white/[0.05] border border-white/[0.12] text-[#A1A1AA]">Tailwind CSS</span>
+            {/* Core Tech Stack in Anta font */}
+            <div className="mt-10 pt-6 border-t border-white/10 flex flex-wrap items-center gap-2 text-xs">
+              <span className="text-[#71717A] font-anta">CORE STACK:</span>
+              {["Python / Django", "FastAPI", "PostgreSQL", "Docker", "Linux", "REST APIs"].map((tech, i) => (
+                <span
+                  key={i}
+                  className="px-2.5 py-1 rounded-lg bg-white/[0.03] border border-white/10 text-[#A1A1AA] font-anta hover:border-[#F53F06]/50 transition-colors"
+                >
+                  {tech}
+                </span>
+              ))}
             </div>
           </div>
 
@@ -108,12 +111,12 @@ export function HeroSection() {
           <button
             onClick={() => scrollTo("about")}
             aria-label="Scroll to About Me section"
-            className="group flex flex-col items-center gap-2 text-white/40 hover:text-[#FF7A00] transition-colors"
+            className="group flex flex-col items-center gap-2 text-[#71717A] hover:text-[#F53F06] transition-colors cursor-pointer"
           >
-            <span className="text-[10px] font-mono tracking-widest uppercase">
+            <span className="text-[10px] font-anta tracking-widest uppercase">
               SCROLL TO EXPLORE
             </span>
-            <div className="p-2 rounded-full bg-white/[0.05] border border-white/[0.12] group-hover:border-[#FF7A00]/40 group-hover:bg-white/[0.08] transition-all">
+            <div className="p-2 rounded-full bg-white/[0.03] border border-white/10 group-hover:border-[#F53F06]/50 transition-all">
               <ArrowDown className="w-4 h-4 animate-bounce text-[#F53F06]" />
             </div>
           </button>

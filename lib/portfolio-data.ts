@@ -157,7 +157,7 @@ export const FEATURED_PROJECTS: Project[] = [
     liveUrl: "https://github.com/mdeibrahim11",
     repoUrl: "https://github.com/mdeibrahim11",
     featured: true,
-    accentColor: "#FF7A00",
+    accentColor: "#F53F06",
   },
   {
     id: "prayer-time-locker",
@@ -187,7 +187,7 @@ export const FEATURED_PROJECTS: Project[] = [
     liveUrl: "https://github.com/mdeibrahim11",
     repoUrl: "https://github.com/mdeibrahim11",
     featured: true,
-    accentColor: "#FF7A00",
+    accentColor: "#F53F06",
   },
   {
     id: "restaurant-app",
@@ -217,7 +217,7 @@ export const FEATURED_PROJECTS: Project[] = [
     liveUrl: "https://github.com/mdeibrahim11",
     repoUrl: "https://github.com/mdeibrahim11",
     featured: true,
-    accentColor: "#FF7A00",
+    accentColor: "#F53F06",
   },
 ];
 
@@ -265,4 +265,21 @@ export const HONORS: HonorItem[] = [
     badge: "Certified",
     detail: "Full-Stack Software Engineering & Problem Solving",
   },
+];
+
+export interface ElevatorFloor {
+  id: string;
+  floor: string;
+  name: string;
+  label: string;
+  targetId: string;
+}
+
+export const ELEVATOR_FLOORS: ElevatorFloor[] = [
+  { id: "hero", floor: "001", name: "Home", label: "Overview", targetId: "hero" },
+  { id: "about", floor: "002", name: "About", label: "Identity & Core", targetId: "about" },
+  { id: "skills", floor: "003", name: "Expertise", label: "Technical Stack", targetId: "skills" },
+  { id: "projects", floor: "004", name: "Projects", label: "Production Systems", targetId: "projects" },
+  { id: "experience", floor: "005", name: "Experience", label: "Career Journey", targetId: "experience" },
+  { id: "contact", floor: "006", name: "Contact", label: "Direct Dispatch", targetId: "contact" },
 ];

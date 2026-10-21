@@ -60,15 +60,15 @@ export function HeroVisual3D() {
     }
 
     // Micro-particles
-    const particles = Array.from({ length: 22 }, () => ({
+    const particles = Array.from({ length: 18 }, () => ({
       x: (Math.random() - 0.5) * 2.2,
       y: (Math.random() - 0.5) * 2.2,
       z: (Math.random() - 0.5) * 2.2,
-      vx: (Math.random() - 0.5) * 0.003,
-      vy: (Math.random() - 0.5) * 0.003,
-      vz: (Math.random() - 0.5) * 0.003,
+      vx: (Math.random() - 0.5) * 0.002,
+      vy: (Math.random() - 0.5) * 0.002,
+      vz: (Math.random() - 0.5) * 0.002,
       size: Math.random() * 2 + 1,
-      color: Math.random() > 0.5 ? "rgba(245, 63, 6, 0.75)" : "rgba(255, 122, 0, 0.75)",
+      color: Math.random() > 0.4 ? "rgba(245, 63, 6, 0.75)" : "rgba(245, 245, 245, 0.5)",
     }));
 
     const updateSize = () => {
@@ -161,10 +161,10 @@ export function HeroVisual3D() {
         return { px, py, scale, z: z2 };
       });
 
-      // Background radial glow
+      // Background radial glow (subtle, localized)
       const radial = ctx.createRadialGradient(cx, cy, 10, cx, cy, radius * 1.3);
-      radial.addColorStop(0, "rgba(245, 63, 6, 0.16)");
-      radial.addColorStop(0.5, "rgba(255, 122, 0, 0.08)");
+      radial.addColorStop(0, "rgba(245, 63, 6, 0.12)");
+      radial.addColorStop(0.6, "rgba(245, 63, 6, 0.03)");
       radial.addColorStop(1, "transparent");
       ctx.fillStyle = radial;
       ctx.beginPath();
@@ -197,10 +197,10 @@ export function HeroVisual3D() {
 
         const gradient = ctx.createLinearGradient(p1.px, p1.py, p2.px, p2.py);
         gradient.addColorStop(0, `rgba(245, 63, 6, ${alpha})`);
-        gradient.addColorStop(1, `rgba(255, 122, 0, ${alpha})`);
+        gradient.addColorStop(1, `rgba(245, 245, 245, ${alpha * 0.4})`);
 
         ctx.strokeStyle = gradient;
-        ctx.lineWidth = Math.max(0.8, 1.6 * ((p1.scale + p2.scale) / 2));
+        ctx.lineWidth = Math.max(0.8, 1.4 * ((p1.scale + p2.scale) / 2));
         ctx.beginPath();
         ctx.moveTo(p1.px, p1.py);
         ctx.lineTo(p2.px, p2.py);
@@ -209,7 +209,7 @@ export function HeroVisual3D() {
 
       // Render vertices
       projected.forEach((p) => {
-        const nodeSize = Math.max(2, 4 * p.scale);
+        const nodeSize = Math.max(2, 3.8 * p.scale);
         const glow = ctx.createRadialGradient(p.px, p.py, 1, p.px, p.py, nodeSize * 2.2);
         glow.addColorStop(0, "rgba(245, 245, 245, 0.95)");
         glow.addColorStop(0.5, "rgba(245, 63, 6, 0.75)");
@@ -242,44 +242,44 @@ export function HeroVisual3D() {
   return (
     <div className="relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[460px] aspect-square mx-auto flex items-center justify-center select-none">
       {/* Outer ambient blur aura */}
-      <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#F53F06]/15 via-[#FF7A00]/10 to-transparent blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 rounded-full bg-[#F53F06]/08 blur-3xl pointer-events-none" />
 
       {/* Canvas container */}
       <div className="relative w-full h-full flex items-center justify-center">
         <canvas
           ref={canvasRef}
-          className="w-full h-full block rounded-3xl cursor-grab active:cursor-grabbing"
+          className="w-full h-full block rounded-2xl cursor-grab active:cursor-grabbing"
           aria-label="Interactive 3D geometry representing distributed systems architecture"
           role="img"
         />
 
         {/* Orbiting Satellite Badges */}
         <div className="absolute top-2 left-2 sm:top-4 sm:left-0 z-10">
-          <div className="px-3.5 py-2 rounded-2xl bg-white/[0.05] backdrop-blur-md border border-white/[0.12] flex items-center gap-2 shadow-xl shadow-black/40 hover:border-[#F53F06]/40 transition-all duration-300">
-            <span className="p-1 rounded-xl bg-[#F53F06]/20 text-[#F53F06]">
+          <div className="px-3.5 py-2 rounded-xl bg-black/85 backdrop-blur-md border border-white/10 flex items-center gap-2 shadow-xl shadow-black/60 hover:border-[#F53F06]/50 transition-all duration-300">
+            <span className="p-1 rounded-lg bg-[#F53F06]/20 text-[#F53F06]">
               <Cpu className="w-3.5 h-3.5" />
             </span>
             <div className="text-left">
-              <p className="text-[9px] sm:text-[10px] text-white/50 uppercase tracking-wider font-mono">Architecture</p>
-              <p className="text-xs font-semibold text-[#F5F5F5]">Python &amp; Distributed</p>
+              <p className="text-[9px] sm:text-[10px] text-[#71717A] uppercase tracking-wider font-anta">Architecture</p>
+              <p className="text-xs font-semibold text-[#F5F5F5] font-display">Python &amp; Systems</p>
             </div>
           </div>
         </div>
 
         <div className="absolute bottom-4 right-2 sm:bottom-6 sm:right-0 z-10">
-          <div className="px-3.5 py-2 rounded-2xl bg-white/[0.05] backdrop-blur-md border border-white/[0.12] flex items-center gap-2 shadow-xl shadow-black/40 hover:border-[#FF7A00]/40 transition-all duration-300">
-            <span className="p-1 rounded-xl bg-[#FF7A00]/20 text-[#FF7A00]">
+          <div className="px-3.5 py-2 rounded-xl bg-black/85 backdrop-blur-md border border-white/10 flex items-center gap-2 shadow-xl shadow-black/60 hover:border-[#F53F06]/50 transition-all duration-300">
+            <span className="p-1 rounded-lg bg-[#F53F06]/20 text-[#F53F06]">
               <Zap className="w-3.5 h-3.5" />
             </span>
             <div className="text-left">
-              <p className="text-[9px] sm:text-[10px] text-white/50 uppercase tracking-wider font-mono">Telemetry</p>
-              <p className="text-xs font-semibold text-[#F5F5F5]">FastAPI &lt;15ms</p>
+              <p className="text-[9px] sm:text-[10px] text-[#71717A] uppercase tracking-wider font-anta">Telemetry</p>
+              <p className="text-xs font-semibold text-[#F5F5F5] font-display">FastAPI &lt;15ms</p>
             </div>
           </div>
         </div>
 
-        <div className="absolute top-4 right-4 hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[10px] font-mono text-[#34D399]">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#34D399] animate-ping" />
+        <div className="absolute top-4 right-4 hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/10 text-[10px] font-anta text-[#A1A1AA]">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#F53F06] animate-pulse" />
           <span>SYS.ONLINE</span>
         </div>
       </div>

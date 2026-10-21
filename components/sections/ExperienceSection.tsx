@@ -18,8 +18,8 @@ export function ExperienceSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
-          floorNumber="05"
-          floorLabel="Career Milestones"
+          floorNumber="005"
+          floorLabel="Experience"
           title="Engineering Journey &"
           highlightWord="Timeline"
           subtitle="Chronological track record of delivering resilient backend architectures and software contributions."
@@ -28,7 +28,7 @@ export function ExperienceSection() {
         {/* Vertical Timeline */}
         <div className="relative max-w-4xl mx-auto">
           {/* Central Stem Line */}
-          <div className="absolute top-4 bottom-4 left-4 sm:left-1/2 -translate-x-1/2 w-0.5 bg-gradient-to-b from-[#F53F06]/40 via-[#FF7A00]/30 to-transparent pointer-events-none" />
+          <div className="absolute top-4 bottom-4 left-4 sm:left-1/2 -translate-x-1/2 w-[1px] bg-white/10 pointer-events-none" />
 
           <div className="space-y-12">
             {CAREER_JOURNEY.map((item, index) => {
@@ -42,25 +42,25 @@ export function ExperienceSection() {
                   } gap-8 pl-12 sm:pl-0`}
                 >
                   {/* Glowing Node on Timeline Stem */}
-                  <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 top-6 z-20 flex items-center justify-center w-7 h-7 rounded-full bg-[#101523] border border-[#F53F06]/50 shadow-md shadow-[#F53F06]/30">
-                    <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#F53F06] to-[#FF7A00]" />
+                  <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 top-6 z-20 flex items-center justify-center w-6 h-6 rounded-full bg-black border border-[#F53F06] shadow-md shadow-[#F53F06]/30">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#F53F06]" />
                   </div>
 
-                  {/* Content Glass Card (Takes roughly half width on sm+) */}
+                  {/* Content Card (Takes roughly half width on sm+) */}
                   <div className="w-full sm:w-[calc(50%-2rem)]">
                     <GlassCard
                       variant="elevated"
-                      className="p-6 border-white/[0.12] rounded-3xl hover:border-[#F53F06]/40 hover:shadow-xl hover:shadow-[#F53F06]/10 transition-all duration-300"
+                      className="p-6 border-white/10 rounded-2xl bg-[#080808] hover:border-[#F53F06]/50 transition-all duration-300"
                     >
                       {/* Period Badge & Location */}
                       <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-white/[0.05] border border-white/[0.12] text-xs font-mono text-[#FF7A00]">
-                          <Calendar className="w-3 h-3 text-[#FF7A00]" />
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/[0.03] border border-white/10 text-xs font-anta text-[#F53F06]">
+                          <Calendar className="w-3 h-3 text-[#F53F06]" />
                           {item.period}
                         </span>
 
-                        <span className="flex items-center gap-1 text-[11px] font-mono text-[#71717A]">
-                          <MapPin className="w-3 h-3 text-[#FF7A00]" />
+                        <span className="flex items-center gap-1 text-[11px] font-anta text-[#71717A]">
+                          <MapPin className="w-3 h-3 text-[#71717A]" />
                           {item.location}
                         </span>
                       </div>
@@ -69,27 +69,27 @@ export function ExperienceSection() {
                       <h3 className="text-lg font-bold font-display text-[#F5F5F5] mb-1">
                         {item.role}
                       </h3>
-                      <p className="text-sm font-medium text-[#F53F06] mb-4 flex items-center gap-1.5">
+                      <p className="text-sm font-semibold font-display text-[#F53F06] mb-4 flex items-center gap-1.5">
                         <Briefcase className="w-3.5 h-3.5 text-[#F53F06]" />
                         <span>{item.company}</span>
                       </p>
 
                       {/* Accomplishments */}
-                      <ul className="space-y-2 mb-4 text-xs sm:text-sm text-[#A1A1AA] leading-relaxed">
+                      <ul className="space-y-2 mb-4 text-xs sm:text-sm text-[#A1A1AA] font-light leading-relaxed">
                         {item.description.map((bullet, bIdx) => (
                           <li key={bIdx} className="flex items-start gap-2">
-                            <CheckCircle className="w-3.5 h-3.5 text-[#34D399] shrink-0 mt-1" />
+                            <CheckCircle className="w-3.5 h-3.5 text-[#F53F06] shrink-0 mt-0.5" />
                             <span>{bullet}</span>
                           </li>
                         ))}
                       </ul>
 
                       {/* Skills Utilized */}
-                      <div className="pt-3 border-t border-white/[0.12] flex flex-wrap gap-1.5">
+                      <div className="pt-3 border-t border-white/10 flex flex-wrap gap-1.5">
                         {item.skills.map((skill, sIdx) => (
                           <span
                             key={sIdx}
-                            className="px-2.5 py-0.5 rounded-xl text-[11px] font-mono bg-white/[0.05] border border-white/[0.12] text-[#A1A1AA]"
+                            className="px-2.5 py-0.5 rounded-lg text-[11px] font-anta bg-white/[0.02] border border-white/10 text-[#A1A1AA]"
                           >
                             {skill}
                           </span>
@@ -106,10 +106,10 @@ export function ExperienceSection() {
           </div>
 
           {/* Honors & Accolades Cards */}
-          <div className="mt-16 pt-8 border-t border-white/[0.12]">
+          <div className="mt-16 pt-8 border-t border-white/10">
             <div className="flex items-center gap-2 mb-6">
               <Award className="w-4 h-4 text-[#F53F06]" />
-              <h3 className="text-xs font-mono uppercase tracking-wider text-[#FF7A00]">
+              <h3 className="text-xs font-anta uppercase tracking-wider text-[#71717A]">
                 Honors &amp; Recognized Milestones
               </h3>
             </div>
@@ -119,19 +119,19 @@ export function ExperienceSection() {
                 <GlassCard
                   key={i}
                   variant="elevated"
-                  className="p-5 border-white/[0.12] rounded-2xl hover:border-[#F53F06]/40 transition-all"
+                  className="p-5 border-white/10 rounded-2xl bg-[#080808] hover:border-[#F53F06]/40 transition-all"
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-mono text-[#71717A]">{h.year}</span>
-                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#F53F06]/15 border border-[#F53F06]/40 text-[10px] font-mono text-[#FF7A00]">
-                      <Sparkles className="w-2.5 h-2.5 text-[#34D399]" />
+                    <span className="text-xs font-anta text-[#71717A]">{h.year}</span>
+                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#F53F06]/15 border border-[#F53F06]/30 text-[10px] font-anta text-[#F53F06]">
+                      <Sparkles className="w-2.5 h-2.5 text-[#F53F06]" />
                       {h.badge}
                     </span>
                   </div>
                   <h4 className="text-base font-bold font-display text-[#F5F5F5]">
                     {h.title}
                   </h4>
-                  <p className="mt-1 text-xs text-[#A1A1AA] leading-relaxed">
+                  <p className="mt-1 text-xs text-[#A1A1AA] font-light leading-relaxed">
                     {h.detail}
                   </p>
                 </GlassCard>

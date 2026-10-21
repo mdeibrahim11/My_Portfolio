@@ -10,28 +10,28 @@ import { ContactSection } from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-[#090B12] text-[#F5F5F5] flex flex-col selection:bg-[#F53F06]/30 selection:text-[#FF7A00]">
+    <div className="relative min-h-screen bg-[#000000] text-[#F5F5F5] flex flex-col selection:bg-[#F53F06]/30 selection:text-[#F53F06]">
       {/* Site Header */}
       <SiteHeader />
 
       {/* Main Content Container */}
       <main className="flex-1 w-full relative">
-        {/* Floor 01: Home / Hero */}
+        {/* Floor 001: Home */}
         <HeroSection />
 
-        {/* Floor 02: About Me */}
+        {/* Floor 002: About */}
         <AboutSection />
 
-        {/* Floor 03: Skills & Expertise */}
+        {/* Floor 003: Expertise */}
         <SkillsSection />
 
-        {/* Floor 04: Featured Projects */}
+        {/* Floor 004: Projects */}
         <ProjectsSection />
 
-        {/* Floor 05: Experience & Journey */}
+        {/* Floor 005: Experience */}
         <ExperienceSection />
 
-        {/* Floor 06: Contact */}
+        {/* Floor 006: Contact */}
         <ContactSection />
       </main>
 
