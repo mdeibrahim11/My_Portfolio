@@ -83,7 +83,6 @@ export function ContactSection() {
       aria-label="Contact Section"
       className="relative py-24 sm:py-32 scroll-mt-24 overflow-hidden"
     >
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
           floorNumber="006"
@@ -96,17 +95,17 @@ export function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: Direct Channels (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
-            <GlassCard variant="elevated" className="p-6 sm:p-8 border-white/10 rounded-2xl bg-[#080808]">
-              <div className="flex items-center gap-2 mb-6 text-xs font-anta text-[#71717A] uppercase tracking-wider">
+            <GlassCard variant="elevated" shimmer className="p-6 sm:p-8 rounded-3xl">
+              <div className="flex items-center gap-2 mb-6 text-xs font-anta text-[#A1A1AA] uppercase tracking-wider">
                 <Terminal className="w-4 h-4 text-[#F53F06]" />
                 <span>Contact Information</span>
               </div>
 
               <div className="space-y-4">
                 {/* Email Channel */}
-                <div className="flex items-start justify-between gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/10">
+                <div className="flex items-start justify-between gap-4 p-4 rounded-2xl bg-white/[0.045] backdrop-blur-xl border border-white/16 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)] hover:border-[#F53F06]/50 hover:bg-white/[0.08] transition-all">
                   <div className="flex items-start gap-3">
-                    <div className="p-2.5 rounded-lg bg-[#F53F06]/15 text-[#F53F06] border border-[#F53F06]/30">
+                    <div className="p-2.5 rounded-xl bg-[#F53F06]/20 text-[#F53F06] border border-[#F53F06]/40 shadow-[0_0_14px_rgba(245,63,6,0.3)]">
                       <Mail className="w-4 h-4" />
                     </div>
                     <div>
@@ -123,7 +122,7 @@ export function ContactSection() {
                   <button
                     onClick={handleCopyEmail}
                     aria-label="Copy email address"
-                    className="p-2.5 rounded-lg bg-white/[0.03] border border-white/10 text-[#A1A1AA] hover:text-white hover:bg-white/[0.08] transition-all cursor-pointer"
+                    className="p-2.5 rounded-xl bg-white/[0.05] border border-white/16 text-[#A1A1AA] hover:text-[#F53F06] hover:bg-white/[0.10] shadow-[inset_0_1px_1px_rgba(255,255,255,0.18)] transition-all cursor-pointer"
                     title="Copy to clipboard"
                   >
                     {copiedEmail ? (
@@ -135,16 +134,18 @@ export function ContactSection() {
                 </div>
 
                 {/* Phone Channel */}
-                <div className="flex items-start justify-between gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/10">
+                <div className="flex items-start justify-between gap-4 p-4 rounded-2xl bg-white/[0.045] backdrop-blur-xl border border-white/16 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)] hover:border-[#6366F1]/50 hover:bg-white/[0.08] transition-all">
                   <div className="flex items-start gap-3">
-                    <div className="p-2.5 rounded-lg bg-[#F53F06]/15 text-[#F53F06] border border-[#F53F06]/30">
+                    <div className="p-2.5 rounded-xl bg-[#6366F1]/20 text-[#6366F1] border border-[#6366F1]/40 shadow-[0_0_14px_rgba(99,102,241,0.3)]">
                       <Phone className="w-4 h-4" />
                     </div>
                     <div>
                       <p className="text-[10px] font-anta text-[#71717A] uppercase">WhatsApp</p>
                       <a
                         href="https://wa.me/mdeibrahim11"
-                        className="text-sm font-medium text-[#F5F5F5] hover:text-[#F53F06] transition-colors"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-medium text-[#F5F5F5] hover:text-[#6366F1] transition-colors"
                       >
                         mdeibrahim11
                       </a>
@@ -154,11 +155,11 @@ export function ContactSection() {
                   <button
                     onClick={handleCopyPhone}
                     aria-label="Copy phone number"
-                    className="p-2.5 rounded-lg bg-white/[0.03] border border-white/10 text-[#A1A1AA] hover:text-white hover:bg-white/[0.08] transition-all cursor-pointer"
+                    className="p-2.5 rounded-xl bg-white/[0.05] border border-white/16 text-[#A1A1AA] hover:text-[#6366F1] hover:bg-white/[0.10] shadow-[inset_0_1px_1px_rgba(255,255,255,0.18)] transition-all cursor-pointer"
                     title="Copy phone"
                   >
                     {copiedPhone ? (
-                      <Check className="w-3.5 h-3.5 text-[#F53F06]" />
+                      <Check className="w-3.5 h-3.5 text-[#6366F1]" />
                     ) : (
                       <Copy className="w-3.5 h-3.5" />
                     )}
@@ -166,8 +167,8 @@ export function ContactSection() {
                 </div>
 
                 {/* Location */}
-                <div className="flex items-center gap-3 p-4 rounded-xl bg-white/[0.02] border border-white/10">
-                  <div className="p-2.5 rounded-lg bg-[#F53F06]/15 text-[#F53F06] border border-[#F53F06]/30">
+                <div className="flex items-center gap-3 p-4 rounded-2xl bg-white/[0.045] backdrop-blur-xl border border-white/16 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)] hover:border-[#06B6D4]/50 transition-all">
+                  <div className="p-2.5 rounded-xl bg-[#06B6D4]/20 text-[#06B6D4] border border-[#06B6D4]/40 shadow-[0_0_14px_rgba(6,182,212,0.3)]">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
@@ -184,7 +185,7 @@ export function ContactSection() {
                       href={PERSONAL_INFO.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 p-3 rounded-xl bg-white/[0.02] border border-white/10 hover:border-[#F53F06]/50 hover:bg-white/[0.04] text-xs font-anta text-[#A1A1AA] hover:text-white transition-all"
+                      className="flex items-center justify-center gap-2 p-3 rounded-2xl bg-white/[0.045] backdrop-blur-xl border border-white/15 hover:border-[#F53F06]/55 hover:bg-white/[0.08] text-xs font-anta text-[#A1A1AA] hover:text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.18)] transition-all hover:-translate-y-0.5"
                     >
                       <GithubIcon className="w-4 h-4 text-[#F53F06]" />
                       <span>GitHub</span>
@@ -193,18 +194,18 @@ export function ContactSection() {
                       href={PERSONAL_INFO.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 p-3 rounded-xl bg-white/[0.02] border border-white/10 hover:border-[#F53F06]/50 hover:bg-white/[0.04] text-xs font-anta text-[#A1A1AA] hover:text-white transition-all"
+                      className="flex items-center justify-center gap-2 p-3 rounded-2xl bg-white/[0.045] backdrop-blur-xl border border-white/15 hover:border-[#6366F1]/55 hover:bg-white/[0.08] text-xs font-anta text-[#A1A1AA] hover:text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.18)] transition-all hover:-translate-y-0.5"
                     >
-                      <LinkedinIcon className="w-4 h-4 text-[#F53F06]" />
+                      <LinkedinIcon className="w-4 h-4 text-[#6366F1]" />
                       <span>LinkedIn</span>
                     </a>
                     <a
                       href={PERSONAL_INFO.facebook}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 p-3 rounded-xl bg-white/[0.02] border border-white/10 hover:border-[#F53F06]/50 hover:bg-white/[0.04] text-xs font-anta text-[#A1A1AA] hover:text-white transition-all"
+                      className="flex items-center justify-center gap-2 p-3 rounded-2xl bg-white/[0.045] backdrop-blur-xl border border-white/15 hover:border-[#06B6D4]/55 hover:bg-white/[0.08] text-xs font-anta text-[#A1A1AA] hover:text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.18)] transition-all hover:-translate-y-0.5"
                     >
-                      <FacebookIcon className="w-4 h-4 text-[#F53F06]" />
+                      <FacebookIcon className="w-4 h-4 text-[#06B6D4]" />
                       <span>Facebook</span>
                     </a>
                   </div>
@@ -215,7 +216,7 @@ export function ContactSection() {
 
           {/* Right Column: Contact Message Form (7 cols) */}
           <div className="lg:col-span-7">
-            <GlassCard variant="elevated" className="p-6 sm:p-8 border-white/10 rounded-2xl bg-[#080808]">
+            <GlassCard variant="elevated" glow glowColor="duo" shimmer className="p-6 sm:p-8 rounded-3xl">
               <h3 className="text-lg font-bold font-display text-[#F5F5F5] mb-2">
                 Send a Message
               </h3>
@@ -224,8 +225,8 @@ export function ContactSection() {
               </p>
 
               {formStatus === "success" ? (
-                <div className="p-6 rounded-xl bg-white/[0.02] border border-[#F53F06]/40 text-center space-y-4 animate-in fade-in duration-300">
-                  <div className="inline-flex p-3 rounded-full bg-[#F53F06]/15 text-[#F53F06]">
+                <div className="p-6 rounded-2xl bg-white/[0.04] backdrop-blur-xl border border-[#F53F06]/40 text-center space-y-4 animate-in fade-in duration-300 shadow-[0_0_30px_rgba(245,63,6,0.25)]">
+                  <div className="inline-flex p-3 rounded-full bg-[#F53F06]/20 text-[#F53F06] border border-[#F53F06]/40 shadow-[0_0_20px_rgba(245,63,6,0.4)]">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <div>
@@ -236,7 +237,7 @@ export function ContactSection() {
                   </div>
                   <button
                     onClick={() => setFormStatus("idle")}
-                    className="px-5 py-2.5 rounded-xl text-xs font-anta bg-white/[0.04] border border-white/10 hover:border-[#F53F06] text-white transition-all cursor-pointer"
+                    className="glass-btn-secondary px-5 py-2.5 rounded-xl text-xs font-anta cursor-pointer"
                   >
                     Send Another Message
                   </button>
@@ -244,7 +245,7 @@ export function ContactSection() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4" noValidate>
                   {formStatus === "error" && (
-                    <div className="p-3.5 rounded-xl bg-red-500/10 border border-red-500/30 text-xs text-red-200 flex items-center gap-2.5">
+                    <div className="p-3.5 rounded-xl bg-red-500/10 backdrop-blur-md border border-red-500/30 text-xs text-red-200 flex items-center gap-2.5">
                       <AlertCircle className="w-4 h-4 text-[#F53F06] shrink-0" />
                       <span>{errorMessage}</span>
                     </div>
@@ -254,7 +255,7 @@ export function ContactSection() {
                     <div>
                       <label
                         htmlFor="contact-name"
-                        className="block text-xs font-anta text-[#71717A] mb-1.5 uppercase"
+                        className="block text-xs font-anta text-[#A1A1AA] mb-1.5 uppercase tracking-wider"
                       >
                         Your Name <span className="text-[#F53F06]">*</span>
                       </label>
@@ -266,14 +267,14 @@ export function ContactSection() {
                         onChange={handleChange}
                         required
                         placeholder="John Doe"
-                        className="w-full px-4 py-2.5 rounded-xl bg-black border border-white/15 text-sm text-[#F5F5F5] placeholder-[#71717A] focus:outline-none focus:border-[#F53F06] focus:ring-1 focus:ring-[#F53F06] transition-all"
+                        className="w-full px-4 py-3 rounded-xl glass-input text-sm text-[#F5F5F5] placeholder-[#71717A] transition-all"
                       />
                     </div>
 
                     <div>
                       <label
                         htmlFor="contact-email"
-                        className="block text-xs font-anta text-[#71717A] mb-1.5 uppercase"
+                        className="block text-xs font-anta text-[#A1A1AA] mb-1.5 uppercase tracking-wider"
                       >
                         Email Address <span className="text-[#F53F06]">*</span>
                       </label>
@@ -285,7 +286,7 @@ export function ContactSection() {
                         onChange={handleChange}
                         required
                         placeholder="john@example.com"
-                        className="w-full px-4 py-2.5 rounded-xl bg-black border border-white/15 text-sm text-[#F5F5F5] placeholder-[#71717A] focus:outline-none focus:border-[#F53F06] focus:ring-1 focus:ring-[#F53F06] transition-all"
+                        className="w-full px-4 py-3 rounded-xl glass-input text-sm text-[#F5F5F5] placeholder-[#71717A] transition-all"
                       />
                     </div>
                   </div>
@@ -293,7 +294,7 @@ export function ContactSection() {
                   <div>
                     <label
                       htmlFor="contact-subject"
-                      className="block text-xs font-anta text-[#71717A] mb-1.5 uppercase"
+                      className="block text-xs font-anta text-[#A1A1AA] mb-1.5 uppercase tracking-wider"
                     >
                       Subject
                     </label>
@@ -304,14 +305,14 @@ export function ContactSection() {
                       value={formData.subject}
                       onChange={handleChange}
                       placeholder="Software Engineering / Collaboration"
-                      className="w-full px-4 py-2.5 rounded-xl bg-black border border-white/15 text-sm text-[#F5F5F5] placeholder-[#71717A] focus:outline-none focus:border-[#F53F06] focus:ring-1 focus:ring-[#F53F06] transition-all"
+                      className="w-full px-4 py-3 rounded-xl glass-input text-sm text-[#F5F5F5] placeholder-[#71717A] transition-all"
                     />
                   </div>
 
                   <div>
                     <label
                       htmlFor="contact-message"
-                      className="block text-xs font-anta text-[#71717A] mb-1.5 uppercase"
+                      className="block text-xs font-anta text-[#A1A1AA] mb-1.5 uppercase tracking-wider"
                     >
                       Message <span className="text-[#F53F06]">*</span>
                     </label>
@@ -323,19 +324,19 @@ export function ContactSection() {
                       onChange={handleChange}
                       required
                       placeholder="Outline your project scope, inquiry, or timeline..."
-                      className="w-full px-4 py-2.5 rounded-xl bg-black border border-white/15 text-sm text-[#F5F5F5] placeholder-[#71717A] focus:outline-none focus:border-[#F53F06] focus:ring-1 focus:ring-[#F53F06] transition-all resize-none"
+                      className="w-full px-4 py-3 rounded-xl glass-input text-sm text-[#F5F5F5] placeholder-[#71717A] transition-all resize-none"
                     />
                   </div>
 
                   <button
                     type="submit"
                     disabled={formStatus === "loading"}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold font-display text-white bg-[#F53F06] hover:bg-[#d43504] disabled:opacity-50 shadow-lg shadow-[#F53F06]/25 active:scale-95 transition-all duration-200 cursor-pointer"
+                    className="glass-btn-primary w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-2xl text-xs font-semibold font-display text-white disabled:opacity-50 cursor-pointer"
                   >
                     {formStatus === "loading" ? (
                       <>
                         <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                        <span className="font-anta">Sending...</span>
+                        <span className="font-anta">Transmitting...</span>
                       </>
                     ) : (
                       <>

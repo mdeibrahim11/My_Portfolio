@@ -253,33 +253,35 @@ export function HeroVisual3D() {
           role="img"
         />
 
-        {/* Orbiting Satellite Badges */}
-        <div className="absolute top-2 left-2 sm:top-4 sm:left-0 z-10">
-          <div className="px-3.5 py-2 rounded-xl bg-black/85 backdrop-blur-md border border-white/10 flex items-center gap-2 shadow-xl shadow-black/60 hover:border-[#F53F06]/50 transition-all duration-300">
-            <span className="p-1 rounded-lg bg-[#F53F06]/20 text-[#F53F06]">
+        {/* Orbiting Satellite Badges - Frosted Glass Telemetry Pods */}
+        <div className="absolute top-2 left-2 sm:top-4 sm:left-0 z-10 animate-float-gentle">
+          <div className="relative px-4 py-2.5 rounded-2xl bg-gradient-to-br from-white/[0.12] via-white/[0.04] to-white/[0.015] backdrop-blur-2xl backdrop-saturate-[200%] border border-white/22 flex items-center gap-2.5 shadow-[0_16px_35px_rgba(0,0,0,0.65),inset_0_1px_1px_rgba(255,255,255,0.3)] hover:border-[#F53F06]/60 hover:shadow-[0_20px_45px_rgba(245,63,6,0.3),inset_0_1px_2px_rgba(255,255,255,0.5)] transition-all duration-300">
+            <div className="absolute inset-x-3 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none rounded-t-2xl" />
+            <span className="p-1.5 rounded-xl bg-[#F53F06]/20 text-[#F53F06] border border-[#F53F06]/40 shadow-[0_0_14px_rgba(245,63,6,0.35)]">
               <Cpu className="w-3.5 h-3.5" />
             </span>
             <div className="text-left">
-              <p className="text-[9px] sm:text-[10px] text-[#71717A] uppercase tracking-wider font-anta">Architecture</p>
+              <p className="text-[9px] sm:text-[10px] text-[#A1A1AA] uppercase tracking-wider font-anta">Architecture</p>
               <p className="text-xs font-semibold text-[#F5F5F5] font-display">Python &amp; Systems</p>
             </div>
           </div>
         </div>
 
-        <div className="absolute bottom-4 right-2 sm:bottom-6 sm:right-0 z-10">
-          <div className="px-3.5 py-2 rounded-xl bg-black/85 backdrop-blur-md border border-white/10 flex items-center gap-2 shadow-xl shadow-black/60 hover:border-[#F53F06]/50 transition-all duration-300">
-            <span className="p-1 rounded-lg bg-[#F53F06]/20 text-[#F53F06]">
+        <div className="absolute bottom-4 right-2 sm:bottom-6 sm:right-0 z-10 animate-float-gentle" style={{ animationDelay: "3s" }}>
+          <div className="relative px-4 py-2.5 rounded-2xl bg-gradient-to-br from-white/[0.12] via-white/[0.04] to-white/[0.015] backdrop-blur-2xl backdrop-saturate-[200%] border border-white/22 flex items-center gap-2.5 shadow-[0_16px_35px_rgba(0,0,0,0.65),inset_0_1px_1px_rgba(255,255,255,0.3)] hover:border-[#F53F06]/60 hover:shadow-[0_20px_45px_rgba(245,63,6,0.3),inset_0_1px_2px_rgba(255,255,255,0.5)] transition-all duration-300">
+            <div className="absolute inset-x-3 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none rounded-t-2xl" />
+            <span className="p-1.5 rounded-xl bg-[#F53F06]/20 text-[#F53F06] border border-[#F53F06]/40 shadow-[0_0_14px_rgba(245,63,6,0.35)]">
               <Zap className="w-3.5 h-3.5" />
             </span>
             <div className="text-left">
-              <p className="text-[9px] sm:text-[10px] text-[#71717A] uppercase tracking-wider font-anta">Telemetry</p>
+              <p className="text-[9px] sm:text-[10px] text-[#A1A1AA] uppercase tracking-wider font-anta">Telemetry</p>
               <p className="text-xs font-semibold text-[#F5F5F5] font-display">FastAPI &lt;15ms</p>
             </div>
           </div>
         </div>
 
-        <div className="absolute top-4 right-4 hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/10 text-[10px] font-anta text-[#A1A1AA]">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#F53F06] animate-pulse" />
+        <div className="absolute top-4 right-4 hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.07] backdrop-blur-2xl border border-white/22 text-[10px] font-anta text-[#A1A1AA] shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#F53F06] animate-pulse shadow-[0_0_10px_#F53F06]" />
           <span>SYS.ONLINE</span>
         </div>
       </div>

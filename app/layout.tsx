@@ -17,7 +17,7 @@ const anta = Anta({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  themeColor: "#05060A",
   colorScheme: "dark",
 };
 
@@ -55,7 +55,7 @@ export default function RootLayout({
       lang="en"
       className={`${josefinSans.variable} ${anta.variable} dark scroll-smooth`}
     >
-      <body className="min-h-screen bg-[#000000] text-[#F5F5F5] font-josefin antialiased selection:bg-[#F53F06]/30 selection:text-[#F53F06] overflow-x-hidden">
+      <body className="min-h-screen bg-[var(--color-bg)] text-[#F5F5F5] font-josefin antialiased selection:bg-[#F53F06]/30 selection:text-[#F53F06] overflow-x-hidden">
         {children}
       </body>
     </html>

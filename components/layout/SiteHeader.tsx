@@ -93,7 +93,7 @@ export function SiteHeader() {
       } else {
         const element = document.getElementById(targetId);
         if (element) {
-          const headerHeight = 72;
+          const headerHeight = 76;
           const elementPosition = element.getBoundingClientRect().top + window.scrollY;
           window.scrollTo({
             top: elementPosition - headerHeight,
@@ -111,35 +111,37 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color,box-shadow] duration-300 border-b ${
-        isScrolled || mobileMenuOpen
-          ? "bg-black/85 backdrop-blur-xl border-white/10 shadow-xl shadow-black/80"
-          : "bg-black/40 backdrop-blur-md border-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${isScrolled || mobileMenuOpen
+          ? "bg-black/55 backdrop-blur-3xl backdrop-saturate-[200%] border-white/16 shadow-[0_16px_45px_rgba(0,0,0,0.85),inset_0_-1px_0_0_rgba(255,255,255,0.1)]"
+          : "bg-black/30 backdrop-blur-2xl backdrop-saturate-[180%] border-white/12 shadow-[0_8px_30px_rgba(0,0,0,0.5)]"
+        }`}
     >
+      {/* Top subtle specular edge highlight */}
+      <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/25 to-transparent pointer-events-none" />
+
       {/* Stable fixed height to prevent resizing on scroll */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between">
         {/* Brand Logo */}
         <Link
           href="/#hero"
           onClick={(e) => handleNavClick(e, "hero")}
-          className="group flex items-center gap-2 text-left rounded-xl p-1 focus:outline-none focus:ring-1 focus:ring-[#F53F06]"
+          className="group flex items-center gap-2 text-left rounded-xl p-1.5 focus:outline-none focus:ring-1 focus:ring-[#F53F06]"
           aria-label="mdeibrahim11 - Home"
         >
           <div className="flex items-center gap-2">
-            <span className="font-display font-bold text-lg text-[#F53F06] tracking-tight group-hover:brightness-110 transition-all">
+            <span className="font-display font-bold text-lg gradient-text-primary tracking-tight group-hover:brightness-110 transition-all">
               mdeibrahim11
             </span>
-            <span className="text-[10px] font-anta px-1.5 py-0.5 rounded-md bg-[#F53F06]/10 text-[#F53F06] border border-[#F53F06]/20 hidden sm:inline">
+            <span className="text-[10px] font-anta px-2.5 py-0.5 rounded-full bg-white/[0.05] backdrop-blur-md text-[#F53F06] border border-[#F53F06]/35 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)] hidden sm:inline">
               DEV
             </span>
           </div>
         </Link>
 
-        {/* Desktop Navigation Links */}
+        {/* Desktop Navigation Links - Floating Glass Dock */}
         <nav
           aria-label="Primary desktop navigation"
-          className="hidden md:flex items-center gap-0.5 p-1 rounded-full bg-[#080808]/90 backdrop-blur-xl border border-white/10 shadow-lg shadow-black/60 text-xs"
+          className="hidden md:flex items-center gap-1 p-1.5 rounded-full bg-gradient-to-r from-white/[0.09] via-white/[0.035] to-white/[0.09] backdrop-blur-3xl backdrop-saturate-[200%] border border-white/18 shadow-[0_12px_36px_rgba(0,0,0,0.6),inset_0_1px_1px_0_rgba(255,255,255,0.26)] text-xs"
         >
           {NAV_ITEMS.map((item) => {
             const isActive = isHomePage && activeSection === item.id;
@@ -148,11 +150,10 @@ export function SiteHeader() {
                 key={item.id}
                 href={`/#${item.id}`}
                 onClick={(e) => handleNavClick(e, item.id)}
-                className={`relative px-4 py-1.5 rounded-full font-anta font-medium transition-[background-color,border-color,color,box-shadow] duration-200 cursor-pointer select-none outline-none focus:outline-none focus-visible:outline-none focus:ring-0 border ${
-                  isActive
-                    ? "bg-[#F53F06] text-white border-[#F53F06] shadow-sm shadow-[#F53F06]/30"
-                    : "bg-transparent text-[#A1A1AA] border-transparent hover:text-white hover:bg-white/[0.04]"
-                }`}
+                className={`relative px-4 py-1.5 rounded-full font-anta font-medium transition-all duration-200 cursor-pointer select-none outline-none focus:outline-none border ${isActive
+                    ? "bg-gradient-to-r from-[#F53F06] to-[#D83300] text-white border-white/35 shadow-[0_0_22px_rgba(245,63,6,0.6),inset_0_1px_1.5px_0_rgba(255,255,255,0.5)]"
+                    : "bg-transparent text-[#A1A1AA] border-transparent hover:text-white hover:bg-white/[0.08] hover:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.18)]"
+                  }`}
               >
                 <span>{item.label}</span>
               </Link>
@@ -167,7 +168,7 @@ export function SiteHeader() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub Profile"
-            className="p-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-[#A1A1AA] hover:text-[#F53F06] hover:border-[#F53F06]/40 transition-all"
+            className="p-2.5 rounded-2xl bg-white/[0.05] backdrop-blur-2xl border border-white/18 text-[#A1A1AA] hover:text-[#F53F06] hover:border-[#F53F06]/55 hover:bg-white/[0.10] shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.2),0_4px_16px_rgba(0,0,0,0.3)] transition-all hover:-translate-y-0.5"
           >
             <GithubIcon className="w-4 h-4" />
           </a>
@@ -176,7 +177,7 @@ export function SiteHeader() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn Profile"
-            className="p-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-[#A1A1AA] hover:text-[#F53F06] hover:border-[#F53F06]/40 transition-all"
+            className="p-2.5 rounded-2xl bg-white/[0.05] backdrop-blur-2xl border border-white/18 text-[#A1A1AA] hover:text-[#F53F06] hover:border-[#F53F06]/55 hover:bg-white/[0.10] shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.2),0_4px_16px_rgba(0,0,0,0.3)] transition-all hover:-translate-y-0.5"
           >
             <LinkedinIcon className="w-4 h-4" />
           </a>
@@ -184,7 +185,7 @@ export function SiteHeader() {
           <Link
             href="/#contact"
             onClick={(e) => handleNavClick(e, "contact")}
-            className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold font-display bg-[#F53F06] hover:bg-[#d43504] text-white shadow-md shadow-[#F53F06]/20 transition-all duration-200"
+            className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-2xl text-xs font-semibold font-display text-white bg-gradient-to-r from-[#F53F06] to-[#D83300] backdrop-blur-md border border-white/30 shadow-[0_8px_24px_rgba(245,63,6,0.45),inset_0_1px_1.5px_rgba(255,255,255,0.5)] hover:shadow-[0_12px_32px_rgba(245,63,6,0.65),inset_0_1px_2px_rgba(255,255,255,0.65)] hover:-translate-y-0.5 transition-all duration-200"
           >
             <span>Get in Touch</span>
             <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -196,16 +197,16 @@ export function SiteHeader() {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-            className="p-2 rounded-xl bg-white/[0.03] border border-white/10 text-[#F5F5F5] hover:border-[#F53F06]/50 transition-colors"
+            className="p-2.5 rounded-2xl bg-white/[0.05] backdrop-blur-2xl border border-white/18 text-[#F5F5F5] hover:border-[#F53F06]/55 hover:bg-white/[0.10] shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.2)] transition-all"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer Navigation */}
+      {/* Mobile Drawer Navigation - Frosted Glass Sheet */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-white/10 bg-black/95 backdrop-blur-2xl px-4 pt-4 pb-8 space-y-4 animate-in slide-in-from-top-2 duration-200">
+        <div className="md:hidden border-t border-white/16 bg-black/70 backdrop-blur-3xl backdrop-saturate-[200%] px-4 pt-4 pb-8 space-y-4 animate-in slide-in-from-top-2 duration-200 shadow-[0_25px_60px_rgba(0,0,0,0.95)]">
           <nav aria-label="Mobile navigation" className="space-y-1">
             {NAV_ITEMS.map((item) => {
               const isActive = isHomePage && activeSection === item.id;
@@ -214,26 +215,25 @@ export function SiteHeader() {
                   key={item.id}
                   href={`/#${item.id}`}
                   onClick={(e) => handleNavClick(e, item.id)}
-                  className={`flex items-center justify-between px-4 py-3 rounded-xl font-anta text-sm font-medium transition-[background-color,border-color,color] duration-200 outline-none focus:outline-none focus-visible:outline-none border ${
-                    isActive
-                      ? "bg-[#F53F06]/15 text-[#F53F06] font-semibold border-[#F53F06]/40"
-                      : "bg-transparent text-[#A1A1AA] border-transparent hover:text-[#F5F5F5] hover:bg-white/[0.03]"
-                  }`}
+                  className={`flex items-center justify-between px-4 py-3 rounded-2xl font-anta text-sm font-medium transition-all duration-200 outline-none border ${isActive
+                      ? "bg-gradient-to-r from-[#F53F06]/25 to-[#F53F06]/10 text-[#F53F06] font-semibold border-[#F53F06]/50 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25),0_0_20px_rgba(245,63,6,0.25)]"
+                      : "bg-white/[0.03] text-[#A1A1AA] border-white/12 hover:text-[#F5F5F5] hover:bg-white/[0.07] hover:border-white/20"
+                    }`}
                 >
                   <span>{item.label}</span>
-                  {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#F53F06]" />}
+                  {isActive && <span className="w-2 h-2 rounded-full bg-[#F53F06] shadow-[0_0_10px_#F53F06]" />}
                 </Link>
               );
             })}
           </nav>
 
-          <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
+          <div className="pt-4 border-t border-white/16 flex items-center justify-between gap-3">
             <div className="flex items-center gap-2">
               <a
                 href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-[#A1A1AA] hover:text-[#F53F06]"
+                className="p-2.5 rounded-2xl bg-white/[0.05] backdrop-blur-2xl border border-white/18 text-[#A1A1AA] hover:text-[#F53F06] shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]"
               >
                 <GithubIcon className="w-4 h-4" />
               </a>
@@ -241,7 +241,7 @@ export function SiteHeader() {
                 href={PERSONAL_INFO.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-[#A1A1AA] hover:text-[#F53F06]"
+                className="p-2.5 rounded-2xl bg-white/[0.05] backdrop-blur-2xl border border-white/18 text-[#A1A1AA] hover:text-[#F53F06] shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]"
               >
                 <LinkedinIcon className="w-4 h-4" />
               </a>
@@ -250,7 +250,7 @@ export function SiteHeader() {
             <Link
               href="/#contact"
               onClick={(e) => handleNavClick(e, "contact")}
-              className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-semibold font-display bg-[#F53F06] text-white"
+              className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-2xl text-xs font-semibold font-display bg-gradient-to-r from-[#F53F06] to-[#D83300] border border-white/30 text-white shadow-[0_6px_20px_rgba(245,63,6,0.4)]"
             >
               <span>Get in Touch</span>
               <ArrowUpRight className="w-3.5 h-3.5" />

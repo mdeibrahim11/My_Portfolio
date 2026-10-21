@@ -11,7 +11,7 @@ import { ContactSection } from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-[#000000] text-[#F5F5F5] flex flex-col selection:bg-[#F53F06]/30 selection:text-[#F53F06]">
+    <div className="relative min-h-screen bg-[var(--color-bg)] text-[#F5F5F5] flex flex-col selection:bg-[#F53F06]/30 selection:text-[#F53F06]">
       {/* Full-Page Ambient Lighting & Cyber Grid System */}
       <AmbientLightingBackground />
 
