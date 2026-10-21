@@ -1,26 +1,130 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #090B12;
+  --elevated: #101523;
+  --elevated-card: #121829;
+  --glass-surface: rgba(255, 255, 255, 0.05);
+  --glass-surface-hover: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-border-hover: rgba(245, 63, 6, 0.45);
+  --primary-accent: #F53F06;
+  --secondary-accent: #FF7A00;
+  --main-text: #F5F5F5;
+  --muted-text: #71717A;
+  --subtle-text: #A1A1AA;
+  --success: #34D399;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-bg-base: #090B12;
+  --color-surface-elevated: #101523;
+  --color-surface-card: #121829;
+  --color-glass-surface: rgba(255, 255, 255, 0.05);
+  --color-glass-border: rgba(255, 255, 255, 0.12);
+  --color-accent-flame: #F53F06;
+  --color-accent-amber: #FF7A00;
+  --color-text-main: #F5F5F5;
+  --color-text-muted: #71717A;
+  --color-text-subtle: #A1A1AA;
+  --color-status-success: #34D399;
+  --font-display: var(--font-josefin-sans), var(--font-space-grotesk), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  color: var(--main-text);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display {
+  font-family: var(--font-josefin-sans), var(--font-space-grotesk), sans-serif;
+}
+
+/* Glassmorphism primitives (Border-radius: 16-24px) */
+.glass-panel {
+  background: rgba(16, 21, 35, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(245, 63, 6, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px -4px rgba(245, 63, 6, 0.2);
+}
+
+/* Fallback for browsers without backdrop-filter support */
+@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .glass-panel {
+    background: #101523;
+  }
+
+  .glass-card {
+    background: #131a2c;
+  }
+}
+
+/* Ambient glow accents */
+.ambient-glow-flame {
+  background: radial-gradient(circle 600px at 50% 50%, rgba(245, 63, 6, 0.14), transparent 70%);
+}
+
+.ambient-glow-amber {
+  background: radial-gradient(circle 600px at 50% 50%, rgba(255, 122, 0, 0.09), transparent 70%);
+}
+
+/* Grid overlay background */
+.bg-cyber-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Hide scrollbars completely while retaining smooth scrolling */
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+  height: 0px;
+  background: transparent;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
