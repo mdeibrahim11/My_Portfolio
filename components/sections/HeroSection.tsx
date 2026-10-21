@@ -3,7 +3,7 @@
 import React from "react";
 import { PERSONAL_INFO } from "@/lib/portfolio-data";
 import { HeroVisual3D } from "@/components/3d/HeroVisual3D";
-import { ArrowDown, Code2, Send } from "lucide-react";
+import { ArrowDown, Code2, Send, Download } from "lucide-react";
 
 export function HeroSection() {
   const scrollTo = (id: string) => {
@@ -63,21 +63,30 @@ export function HeroSection() {
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto">
+            <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto">
               <button
                 onClick={() => scrollTo("projects")}
-                className="group relative inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-[#000000] bg-[#F5F5F5] hover:bg-[#F53F06] hover:text-white transition-all duration-200 cursor-pointer shadow-lg shadow-black/50"
+                className="group relative inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm text-[#000000] bg-[#F5F5F5] hover:bg-[#F53F06] hover:text-white transition-all duration-200 cursor-pointer shadow-lg shadow-black/50"
               >
                 <Code2 className="w-4 h-4 text-[#000000] group-hover:text-white transition-colors" />
                 <span>View Projects</span>
               </button>
 
+              <a
+                href={PERSONAL_INFO.resumeUrl}
+                download="MD_EIBRAHIM_MOLLA_CV.pdf"
+                className="group inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-medium text-sm text-[#F5F5F5] bg-white/[0.03] border border-white/15 hover:border-[#F53F06] hover:text-[#F53F06] transition-all duration-200 cursor-pointer"
+              >
+                <Download className="w-3.5 h-3.5 text-[#F53F06]" />
+                <span>Download CV</span>
+              </a>
+
               <button
                 onClick={() => scrollTo("contact")}
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-medium text-sm text-[#F5F5F5] bg-transparent border border-white/15 hover:border-[#F53F06] hover:text-[#F53F06] transition-all duration-200 cursor-pointer"
+                className="group inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-medium text-sm text-[#A1A1AA] hover:text-white transition-colors cursor-pointer"
               >
                 <Send className="w-3.5 h-3.5 text-[#F53F06]" />
-                <span>Contact Me</span>
+                <span>Contact</span>
               </button>
             </div>
 

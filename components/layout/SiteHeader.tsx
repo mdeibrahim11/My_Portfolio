@@ -161,7 +161,7 @@ export function SiteHeader() {
             onClick={(e) => handleNavClick(e, "contact")}
             className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold font-display bg-[#F53F06] hover:bg-[#d43504] text-white shadow-md shadow-[#F53F06]/20 transition-all duration-200"
           >
-            <span>Initiate Contact</span>
+            <span>Get in Touch</span>
             <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </Link>
         </div>
@@ -227,7 +227,7 @@ export function SiteHeader() {
               onClick={(e) => handleNavClick(e, "contact")}
               className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-semibold font-display bg-[#F53F06] text-white"
             >
-              <span>Contact Dispatch</span>
+              <span>Get in Touch</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
           </div>

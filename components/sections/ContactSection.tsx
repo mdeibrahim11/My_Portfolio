@@ -13,8 +13,9 @@ import {
   Copy,
   AlertCircle,
   CheckCircle2,
+  Phone,
 } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
+import { GithubIcon, LinkedinIcon, FacebookIcon } from "@/components/ui/Icons";
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -27,11 +28,18 @@ export function ContactSection() {
   const [formStatus, setFormStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copiedPhone, setCopiedPhone] = useState(false);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(PERSONAL_INFO.email);
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
+  };
+
+  const handleCopyPhone = () => {
+    navigator.clipboard.writeText(PERSONAL_INFO.whatsapp);
+    setCopiedPhone(true);
+    setTimeout(() => setCopiedPhone(false), 2000);
   };
 
   const handleChange = (
@@ -128,6 +136,37 @@ export function ContactSection() {
                   </button>
                 </div>
 
+                {/* Phone Channel */}
+                <div className="flex items-start justify-between gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/10">
+                  <div className="flex items-start gap-3">
+                    <div className="p-2.5 rounded-lg bg-[#F53F06]/15 text-[#F53F06] border border-[#F53F06]/30">
+                      <Phone className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-anta text-[#71717A] uppercase">WhatsApp</p>
+                      <a
+                        href="https://wa.me/mdeibrahim11"
+                        className="text-sm font-medium text-[#F5F5F5] hover:text-[#F53F06] transition-colors"
+                      >
+                        mdeibrahim11
+                      </a>
+                    </div>
+                  </div>
+
+                  <button
+                    onClick={handleCopyPhone}
+                    aria-label="Copy phone number"
+                    className="p-2.5 rounded-lg bg-white/[0.03] border border-white/10 text-[#A1A1AA] hover:text-white hover:bg-white/[0.08] transition-all cursor-pointer"
+                    title="Copy phone"
+                  >
+                    {copiedPhone ? (
+                      <Check className="w-3.5 h-3.5 text-[#F53F06]" />
+                    ) : (
+                      <Copy className="w-3.5 h-3.5" />
+                    )}
+                  </button>
+                </div>
+
                 {/* Location */}
                 <div className="flex items-center gap-3 p-4 rounded-xl bg-white/[0.02] border border-white/10">
                   <div className="p-2.5 rounded-lg bg-[#F53F06]/15 text-[#F53F06] border border-[#F53F06]/30">
@@ -142,12 +181,12 @@ export function ContactSection() {
                 {/* Social Nodes */}
                 <div className="pt-2">
                   <p className="text-xs font-anta text-[#71717A] uppercase mb-3">Online Profiles</p>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-3 gap-2.5">
                     <a
                       href={PERSONAL_INFO.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2.5 p-3 rounded-xl bg-white/[0.02] border border-white/10 hover:border-[#F53F06]/50 hover:bg-white/[0.04] text-xs font-anta text-[#A1A1AA] hover:text-white transition-all"
+                      className="flex items-center justify-center gap-2 p-3 rounded-xl bg-white/[0.02] border border-white/10 hover:border-[#F53F06]/50 hover:bg-white/[0.04] text-xs font-anta text-[#A1A1AA] hover:text-white transition-all"
                     >
                       <GithubIcon className="w-4 h-4 text-[#F53F06]" />
                       <span>GitHub</span>
@@ -156,10 +195,19 @@ export function ContactSection() {
                       href={PERSONAL_INFO.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2.5 p-3 rounded-xl bg-white/[0.02] border border-white/10 hover:border-[#F53F06]/50 hover:bg-white/[0.04] text-xs font-anta text-[#A1A1AA] hover:text-white transition-all"
+                      className="flex items-center justify-center gap-2 p-3 rounded-xl bg-white/[0.02] border border-white/10 hover:border-[#F53F06]/50 hover:bg-white/[0.04] text-xs font-anta text-[#A1A1AA] hover:text-white transition-all"
                     >
                       <LinkedinIcon className="w-4 h-4 text-[#F53F06]" />
                       <span>LinkedIn</span>
+                    </a>
+                    <a
+                      href={PERSONAL_INFO.facebook}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 p-3 rounded-xl bg-white/[0.02] border border-white/10 hover:border-[#F53F06]/50 hover:bg-white/[0.04] text-xs font-anta text-[#A1A1AA] hover:text-white transition-all"
+                    >
+                      <FacebookIcon className="w-4 h-4 text-[#F53F06]" />
+                      <span>Facebook</span>
                     </a>
                   </div>
                 </div>
