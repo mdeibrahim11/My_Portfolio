@@ -94,29 +94,18 @@ export function SiteHeader() {
         <Link
           href="/#hero"
           onClick={(e) => handleNavClick(e, "hero")}
-          className="group flex items-center gap-3 text-left focus:outline-none focus:ring-2 focus:ring-[#F53F06] rounded-xl p-1"
-          aria-label="Md Eibrahim Molla - Home"
+          className="group flex items-center gap-3 text-left rounded-xl p-1"
+          aria-label="mdeibrahim11 - Home"
         >
-          <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-white/[0.03] border border-white/10 group-hover:border-[#F53F06]/50 transition-all duration-300">
-            <span className="font-display font-bold text-sm text-[#F53F06]">
-              EM
+          <div className="flex items-center gap-1.5">
+            <span className="font-display font-bold text-lg text-[#F53F06]">
+              mdeibrahim11
             </span>
-            <span className="absolute -bottom-0.5 -right-0.5 w-2 h-2 rounded-full bg-[#F53F06]" />
+            <span className="text-[10px] font-anta px-1.5 py-0.5 rounded-md bg-[#F53F06]/10 text-[#F53F06] border border-[#F53F06]/20 hidden sm:inline">
+              DEV
+            </span>
           </div>
-
-          <div>
-            <div className="flex items-center gap-1.5">
-              <span className="font-display font-bold text-sm sm:text-base tracking-tight text-[#F5F5F5] group-hover:text-white">
-                {PERSONAL_INFO.name}
-              </span>
-              <span className="text-[10px] font-anta px-1.5 py-0.5 rounded-md bg-[#F53F06]/10 text-[#F53F06] border border-[#F53F06]/20 hidden sm:inline">
-                DEV
-              </span>
-            </div>
-            <p className="text-[11px] font-anta text-[#71717A] hidden md:block">
-              Software Engineer &amp; Python
-            </p>
-          </div>
+          
         </Link>
 
         {/* Desktop Navigation Links */}

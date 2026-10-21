@@ -77,7 +77,7 @@ export function ProjectsSection() {
                 </div>
 
                 {/* Simulated UI Window Canvas / Mockup */}
-                <div className="relative w-full h-44 rounded-xl overflow-hidden mb-6 bg-black border border-white/10 group-hover:border-white/20 transition-all duration-300 flex flex-col justify-between p-4">
+                <div className="relative w-full h-36 rounded-xl overflow-hidden mb-5 bg-black border border-white/10 group-hover:border-white/20 transition-all duration-300 flex flex-col justify-between p-4">
                   {/* Mock Window Controls */}
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1.5">
@@ -85,10 +85,12 @@ export function ProjectsSection() {
                       <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
                       <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
                     </div>
-                    <div className="flex items-center gap-1.5 text-[10px] font-anta text-[#A1A1AA] bg-white/[0.04] px-2.5 py-1 rounded-lg border border-white/10">
-                      <Sparkles className="w-2.5 h-2.5 text-[#F53F06]" />
-                      <span>{project.metrics || "Active System"}</span>
-                    </div>
+                    {project.metrics && (
+                      <div className="flex items-center gap-1.5 text-[10px] font-anta text-[#A1A1AA] bg-white/[0.04] px-2.5 py-1 rounded-lg border border-white/10">
+                        <Sparkles className="w-2.5 h-2.5 text-[#F53F06]" />
+                        <span>{project.metrics}</span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Graphic Visual within mockup */}
@@ -98,11 +100,7 @@ export function ProjectsSection() {
                     </p>
                   </div>
 
-                  {/* Mock Telemetry Footer */}
-                  <div className="flex items-center justify-between text-[10px] font-anta text-[#71717A] border-t border-white/10 pt-2">
-                    <span>STATUS: OPERATIONAL</span>
-                    <span className="text-[#F53F06]">REPO: OPEN SOURCE</span>
-                  </div>
+                  <div className="h-2" />
 
                   {/* Hover ambient highlight */}
                   <div
@@ -114,15 +112,9 @@ export function ProjectsSection() {
                 </div>
 
                 {/* Description (Josefin Sans 300) */}
-                <p className="text-sm text-[#A1A1AA] font-light leading-relaxed mb-4">
+                <p className="text-sm text-[#A1A1AA] font-light leading-relaxed mb-5">
                   {project.description}
                 </p>
-
-                {/* Role / Contribution Note */}
-                <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/10 mb-5 text-xs text-[#A1A1AA] font-light leading-relaxed">
-                  <span className="font-semibold text-[#F5F5F5] font-display">Role & Delivery: </span>
-                  {project.role}
-                </div>
 
                 {/* Tech Chips in Anta */}
                 <div className="flex flex-wrap gap-1.5 mb-6">

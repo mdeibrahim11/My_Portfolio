@@ -84,7 +84,7 @@ export function ContactSection() {
           floorLabel="Contact"
           title="Direct Collaboration &"
           highlightWord="Inquiry"
-          subtitle="Initiate an encrypted dispatch or reach out directly to discuss high-impact software engineering opportunities."
+          subtitle="Get in touch to discuss software engineering, backend architecture, or project collaborations."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -93,7 +93,7 @@ export function ContactSection() {
             <GlassCard variant="elevated" className="p-6 sm:p-8 border-white/10 rounded-2xl bg-[#080808]">
               <div className="flex items-center gap-2 mb-6 text-xs font-anta text-[#71717A] uppercase tracking-wider">
                 <Terminal className="w-4 h-4 text-[#F53F06]" />
-                <span>Node Endpoint Details</span>
+                <span>Contact Information</span>
               </div>
 
               <div className="space-y-4">
@@ -104,7 +104,7 @@ export function ContactSection() {
                       <Mail className="w-4 h-4" />
                     </div>
                     <div>
-                      <p className="text-[10px] font-anta text-[#71717A] uppercase">Primary Email</p>
+                      <p className="text-[10px] font-anta text-[#71717A] uppercase">Email</p>
                       <a
                         href={`mailto:${PERSONAL_INFO.email}`}
                         className="text-sm font-medium text-[#F5F5F5] hover:text-[#F53F06] transition-colors break-all"
@@ -128,20 +128,20 @@ export function ContactSection() {
                   </button>
                 </div>
 
-                {/* Location Node */}
+                {/* Location */}
                 <div className="flex items-center gap-3 p-4 rounded-xl bg-white/[0.02] border border-white/10">
                   <div className="p-2.5 rounded-lg bg-[#F53F06]/15 text-[#F53F06] border border-[#F53F06]/30">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
-                    <p className="text-[10px] font-anta text-[#71717A] uppercase">Base Station</p>
+                    <p className="text-[10px] font-anta text-[#71717A] uppercase">Location</p>
                     <p className="text-sm font-medium text-[#F5F5F5]">{PERSONAL_INFO.location}</p>
                   </div>
                 </div>
 
                 {/* Social Nodes */}
                 <div className="pt-2">
-                  <p className="text-xs font-anta text-[#71717A] uppercase mb-3">External Links</p>
+                  <p className="text-xs font-anta text-[#71717A] uppercase mb-3">Online Profiles</p>
                   <div className="grid grid-cols-2 gap-3">
                     <a
                       href={PERSONAL_INFO.github}
@@ -171,10 +171,10 @@ export function ContactSection() {
           <div className="lg:col-span-7">
             <GlassCard variant="elevated" className="p-6 sm:p-8 border-white/10 rounded-2xl bg-[#080808]">
               <h3 className="text-lg font-bold font-display text-[#F5F5F5] mb-2">
-                Transmit a Message
+                Send a Message
               </h3>
               <p className="text-xs sm:text-sm text-[#A1A1AA] font-light mb-6">
-                Have a proposal, technical inquiry, or architecture question? Leave a dispatch below.
+                Have a project in mind or want to explore collaboration? Send a message below.
               </p>
 
               {formStatus === "success" ? (
@@ -183,16 +183,16 @@ export function ContactSection() {
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold font-display text-[#F5F5F5]">Transmission Received</h4>
+                    <h4 className="text-base font-bold font-display text-[#F5F5F5]">Message Received</h4>
                     <p className="text-xs text-[#A1A1AA] font-light mt-1">
-                      Thank you for reaching out. I will respond to your dispatch promptly.
+                      Thank you for reaching out. I will review your message and reply promptly.
                     </p>
                   </div>
                   <button
                     onClick={() => setFormStatus("idle")}
                     className="px-5 py-2.5 rounded-xl text-xs font-anta bg-white/[0.04] border border-white/10 hover:border-[#F53F06] text-white transition-all cursor-pointer"
                   >
-                    Send Another Dispatch
+                    Send Another Message
                   </button>
                 </div>
               ) : (
@@ -219,7 +219,7 @@ export function ContactSection() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        placeholder="Ada Lovelace"
+                        placeholder="John Doe"
                         className="w-full px-4 py-2.5 rounded-xl bg-black border border-white/15 text-sm text-[#F5F5F5] placeholder-[#71717A] focus:outline-none focus:border-[#F53F06] focus:ring-1 focus:ring-[#F53F06] transition-all"
                       />
                     </div>
@@ -238,7 +238,7 @@ export function ContactSection() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        placeholder="ada@example.com"
+                        placeholder="john@example.com"
                         className="w-full px-4 py-2.5 rounded-xl bg-black border border-white/15 text-sm text-[#F5F5F5] placeholder-[#71717A] focus:outline-none focus:border-[#F53F06] focus:ring-1 focus:ring-[#F53F06] transition-all"
                       />
                     </div>
@@ -249,7 +249,7 @@ export function ContactSection() {
                       htmlFor="contact-subject"
                       className="block text-xs font-anta text-[#71717A] mb-1.5 uppercase"
                     >
-                      Subject / Objective
+                      Subject
                     </label>
                     <input
                       id="contact-subject"
@@ -257,7 +257,7 @@ export function ContactSection() {
                       type="text"
                       value={formData.subject}
                       onChange={handleChange}
-                      placeholder="Software Engineering & Python Opportunity"
+                      placeholder="Software Engineering / Collaboration"
                       className="w-full px-4 py-2.5 rounded-xl bg-black border border-white/15 text-sm text-[#F5F5F5] placeholder-[#71717A] focus:outline-none focus:border-[#F53F06] focus:ring-1 focus:ring-[#F53F06] transition-all"
                     />
                   </div>
@@ -267,7 +267,7 @@ export function ContactSection() {
                       htmlFor="contact-message"
                       className="block text-xs font-anta text-[#71717A] mb-1.5 uppercase"
                     >
-                      Message Payload <span className="text-[#F53F06]">*</span>
+                      Message <span className="text-[#F53F06]">*</span>
                     </label>
                     <textarea
                       id="contact-message"
@@ -276,7 +276,7 @@ export function ContactSection() {
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      placeholder="Outline your project scope, timeline, or engineering inquiry..."
+                      placeholder="Outline your project scope, inquiry, or timeline..."
                       className="w-full px-4 py-2.5 rounded-xl bg-black border border-white/15 text-sm text-[#F5F5F5] placeholder-[#71717A] focus:outline-none focus:border-[#F53F06] focus:ring-1 focus:ring-[#F53F06] transition-all resize-none"
                     />
                   </div>
@@ -289,12 +289,12 @@ export function ContactSection() {
                     {formStatus === "loading" ? (
                       <>
                         <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                        <span className="font-anta">Transmitting Packet...</span>
+                        <span className="font-anta">Sending...</span>
                       </>
                     ) : (
                       <>
                         <Send className="w-4 h-4" />
-                        <span>Send Transmission</span>
+                        <span>Send Message</span>
                       </>
                     )}
                   </button>

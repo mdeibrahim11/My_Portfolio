@@ -36,20 +36,15 @@ export function HeroSection() {
           {/* Left Column: Personal Title & CTAs (7 cols) */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             {/* Availability / System Status Pill */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-xs font-anta text-[#A1A1AA] mb-6 backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-xs font-anta text-[#A1A1AA] mb-6 backdrop-blur-md">
               <span className="flex h-2 w-2 rounded-full bg-[#F53F06] animate-pulse" />
               <span className="text-[#71717A]">SYS:ONLINE</span>
               <span className="text-white/20">|</span>
               <span className="text-[#F5F5F5] font-medium">{PERSONAL_INFO.status}</span>
             </div>
 
-            {/* Tagline Indicator */}
-            <p className="text-sm font-anta text-[#71717A] tracking-wider mb-2">
-              # 001 // SYSTEM OVERVIEW
-            </p>
-
             {/* Primary Display Heading (Josefin Sans 700) */}
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold font-display tracking-tight text-[#F5F5F5] leading-[1.08] mb-6">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold font-display tracking-tight text-[#F5F5F5] leading-[1.08] mb-4">
               Hello, I&apos;m{" "}
               <span className="text-[#F53F06]">
                 {PERSONAL_INFO.name}
@@ -57,14 +52,14 @@ export function HeroSection() {
             </h1>
 
             {/* Professional Role (Josefin Sans 600) */}
-            <div className="flex items-center gap-3 text-lg sm:text-2xl font-semibold text-[#F5F5F5] mb-6 font-display">
+            <div className="flex items-center gap-2.5 text-lg sm:text-2xl font-semibold text-[#F5F5F5] mb-5 font-display">
               <span className="text-[#F53F06]">✦</span>
               <p>{PERSONAL_INFO.title}</p>
             </div>
 
             {/* Concise Authentic Introduction (Josefin Sans 300) */}
             <p className="text-base sm:text-lg text-[#A1A1AA] font-light max-w-xl leading-relaxed mb-8">
-              {PERSONAL_INFO.shortBio}
+              Architecting high-performance backend systems, scalable RESTful APIs, and distributed database architectures.
             </p>
 
             {/* Action Buttons */}
@@ -86,10 +81,10 @@ export function HeroSection() {
               </button>
             </div>
 
-            {/* Core Tech Stack in Anta font */}
-            <div className="mt-10 pt-6 border-t border-white/10 flex flex-wrap items-center gap-2 text-xs">
+            {/* Core Tech Stack - Minimal, Essential */}
+            <div className="mt-8 pt-5 border-t border-white/10 flex flex-wrap items-center gap-2 text-xs">
               <span className="text-[#71717A] font-anta">CORE STACK:</span>
-              {["Python / Django", "FastAPI", "PostgreSQL", "Docker", "Linux", "REST APIs"].map((tech, i) => (
+              {["Python / Django", "FastAPI", "PostgreSQL", "Docker / Linux"].map((tech, i) => (
                 <span
                   key={i}
                   className="px-2.5 py-1 rounded-lg bg-white/[0.03] border border-white/10 text-[#A1A1AA] font-anta hover:border-[#F53F06]/50 transition-colors"

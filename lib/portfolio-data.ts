@@ -230,25 +230,23 @@ export const CAREER_JOURNEY: ExperienceItem[] = [
     location: "Dhaka, Bangladesh",
     current: true,
     description: [
-      "Architecting and engineering scalable backend solutions, REST APIs, and business automation software for digital entrepreneurs and enterprises.",
-      "Designing modular microservices and automated workflow pipelines with sub-second response times.",
-      "Optimizing high-concurrency database queries and secure API endpoints.",
+      "Architecting scalable backend services and high-throughput REST APIs using Python, Django, and FastAPI.",
+      "Optimizing relational database schemas and automated workflows for sub-second data processing.",
     ],
-    skills: ["Python", "Django", "FastAPI", "Backend Architecture", "PostgreSQL", "REST APIs"],
+    skills: ["Python", "Django", "FastAPI", "PostgreSQL", "REST APIs", "Architecture"],
   },
   {
     id: "softvence-it",
     period: "Jun 2025 — May 2026",
-    role: "Co-Leader of Code-Hydra Team & Python Developer",
+    role: "Co-Leader of Code-Hydra & Python Developer",
     company: "Softvence IT LTD",
     location: "Mohakhali, Dhaka, Bangladesh",
     current: false,
     description: [
-      "Co-led the Code-Hydra developer team, conducting code reviews, sprint architecture, and database design.",
-      "Engineered robust backend services, integrated database schemas, and developed high-performance REST APIs using Python and modern web frameworks.",
-      "Managed schema migrations, performance tuning, and cross-functional team delivery with Git version control.",
+      "Co-led the Code-Hydra developer team, conducting architectural planning, code reviews, and schema migrations.",
+      "Engineered resilient production backend services and relational database architectures using Python and MySQL.",
     ],
-    skills: ["Python", "Django", "REST APIs", "MySQL", "Git", "Team Leadership"],
+    skills: ["Python", "Django", "MySQL", "REST APIs", "Git", "Team Leadership"],
   },
 ];
 

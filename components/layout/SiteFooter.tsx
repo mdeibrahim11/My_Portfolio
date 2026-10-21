@@ -13,14 +13,14 @@ export function SiteFooter() {
     <footer className="relative border-t border-white/10 bg-[#000000] py-12 pb-24 lg:pb-12 text-xs font-anta text-[#71717A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pb-8 border-b border-white/10">
-          {/* Brand & Terminal Status */}
+          {/* Brand & Status */}
           <div className="flex items-center gap-3">
             <div className="w-2 h-2 rounded-full bg-[#F53F06] animate-pulse" />
             <span className="text-[#F5F5F5] font-display font-bold tracking-tight">
               {PERSONAL_INFO.name}
             </span>
             <span className="text-white/20">|</span>
-            <span className="text-[#71717A]">STATUS: NOMINAL</span>
+            <span className="text-[#71717A]">Open to Work</span>
           </div>
 
           {/* Scroll to Top button */}
@@ -36,7 +36,7 @@ export function SiteFooter() {
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-[11px]">
           <p className="text-[#71717A]">
-            © 2026 {PERSONAL_INFO.name}. Built with Next.js 16, React 19 &amp; Tailwind CSS v4.
+            © 2026 {PERSONAL_INFO.name}. All rights reserved.
           </p>
 
           <div className="flex items-center gap-4 text-[#A1A1AA]">
@@ -60,7 +60,7 @@ export function SiteFooter() {
               href={`mailto:${PERSONAL_INFO.email}`}
               className="hover:text-[#F53F06] transition-colors"
             >
-              Email Dispatch
+              Email
             </a>
           </div>
         </div>
