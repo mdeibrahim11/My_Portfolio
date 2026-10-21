@@ -1,6 +1,7 @@
 import React from "react";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { AmbientLightingBackground } from "@/components/ui/AmbientLightingBackground";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
@@ -11,11 +12,14 @@ import { ContactSection } from "@/components/sections/ContactSection";
 export default function Home() {
   return (
     <div className="relative min-h-screen bg-[#000000] text-[#F5F5F5] flex flex-col selection:bg-[#F53F06]/30 selection:text-[#F53F06]">
+      {/* Full-Page Ambient Lighting & Cyber Grid System */}
+      <AmbientLightingBackground />
+
       {/* Site Header */}
       <SiteHeader />
 
       {/* Main Content Container */}
-      <main className="flex-1 w-full relative">
+      <main className="flex-1 w-full relative z-10">
         {/* Floor 001: Home */}
         <HeroSection />
 

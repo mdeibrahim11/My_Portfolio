@@ -25,11 +25,6 @@ export function HeroSection() {
       aria-label="Overview Section"
       className="relative min-h-[92vh] flex flex-col justify-center pt-28 pb-16 sm:pt-36 sm:pb-20 lg:pt-32 lg:pb-20 overflow-hidden"
     >
-      {/* Subtle, localized orange-red ambient glow */}
-      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#F53F06]/[0.06] blur-[150px] pointer-events-none" />
-
-      {/* Subtle Grid Background overlay */}
-      <div className="absolute inset-0 bg-cyber-grid opacity-40 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">

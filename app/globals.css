@@ -95,6 +95,69 @@ p {
   border-color: rgba(245, 63, 6, 0.45);
 }
 
+/* Authentic Lighting & Breathing keyframes from https://github.com/mdeibrahim11 (src/lib/svg.ts) */
+@keyframes breathe {
+  from {
+    opacity: 0.6;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes breathe-alt {
+  from {
+    opacity: 0.75;
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0.45;
+    transform: scale(0.94) translate3d(15px, -15px, 0);
+  }
+}
+
+@keyframes breathe-slow {
+  from {
+    opacity: 0.5;
+    transform: scale(0.9) translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0.95;
+    transform: scale(1.05) translate3d(-15px, 15px, 0);
+  }
+}
+
+.animate-breathe {
+  animation: breathe 9s ease-in-out infinite alternate;
+}
+
+.animate-breathe-alt {
+  animation: breathe-alt 12s ease-in-out infinite alternate;
+}
+
+.animate-breathe-slow {
+  animation: breathe-slow 15s ease-in-out infinite alternate;
+}
+
+/* Authentic Radial Glow Gradients (GlowT, GlowC, GlowK from src/sections/about.ts, contact.ts) */
+.glow-t {
+  background: radial-gradient(circle at center, rgba(245, 63, 6, 0.38) 0%, rgba(245, 63, 6, 0.08) 48%, transparent 75%);
+}
+
+.glow-ambient {
+  background: radial-gradient(circle at center, rgba(245, 63, 6, 0.22) 0%, rgba(245, 63, 6, 0.05) 50%, transparent 75%);
+}
+
+.glow-k {
+  background: radial-gradient(circle at center, rgba(245, 63, 6, 0.28) 0%, rgba(245, 63, 6, 0.06) 55%, transparent 80%);
+}
+
+.glow-c {
+  background: radial-gradient(circle at center, rgba(245, 63, 6, 0.20) 0%, rgba(245, 63, 6, 0.04) 50%, transparent 75%);
+}
+
 /* Subtle, localized orange-red radial glow */
 .ambient-glow-accent {
   background: radial-gradient(circle 500px at 50% 50%, rgba(245, 63, 6, 0.08), transparent 70%);
@@ -110,8 +173,8 @@ p {
 /* Subtle Grid overlay background on #000000 */
 .bg-cyber-grid {
   background-image:
-    linear-gradient(to right, rgba(245, 245, 245, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(245, 245, 245, 0.02) 1px, transparent 1px);
+    linear-gradient(to right, rgba(245, 245, 245, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(245, 245, 245, 0.025) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 

@@ -242,7 +242,7 @@ export function HeroVisual3D() {
   return (
     <div className="relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[460px] aspect-square mx-auto flex items-center justify-center select-none">
       {/* Outer ambient blur aura */}
-      <div className="absolute inset-0 rounded-full bg-[#F53F06]/08 blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 rounded-full bg-[#F53F06]/[0.08] blur-3xl pointer-events-none" />
 
       {/* Canvas container */}
       <div className="relative w-full h-full flex items-center justify-center">

@@ -38,8 +38,6 @@ export function AboutSection() {
       aria-label="About Me Section"
       className="relative py-24 sm:py-32 scroll-mt-24 overflow-hidden"
     >
-      {/* Subtle, localized orange-red ambient glow */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 rounded-full bg-[#F53F06]/[0.05] blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading

@@ -20,8 +20,6 @@ export function SkillsSection() {
       aria-label="Skills and Expertise Section"
       className="relative py-24 sm:py-32 scroll-mt-24 overflow-hidden"
     >
-      {/* Subtle ambient glow */}
-      <div className="absolute top-1/3 right-1/4 w-80 h-80 rounded-full bg-[#F53F06]/[0.05] blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading

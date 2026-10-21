@@ -33,8 +33,6 @@ export function ProjectsSection() {
       aria-label="Featured Projects Section"
       className="relative py-24 sm:py-32 scroll-mt-24 overflow-hidden"
     >
-      {/* Subtle background ambient light */}
-      <div className="absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full bg-[#F53F06]/[0.05] blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading

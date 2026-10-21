@@ -83,8 +83,6 @@ export function ContactSection() {
       aria-label="Contact Section"
       className="relative py-24 sm:py-32 scroll-mt-24 overflow-hidden"
     >
-      {/* Background ambient light */}
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full bg-[#F53F06]/[0.05] blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
